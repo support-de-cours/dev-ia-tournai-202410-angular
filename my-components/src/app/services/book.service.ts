@@ -16,8 +16,6 @@ export class BookService {
 
   get book(): BehaviorSubject<Book|undefined>
   {
-    console.log("2. Get Book. ", this._book);
     return this._book;
   }
-
 }
