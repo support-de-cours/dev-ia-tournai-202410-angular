@@ -1,0 +1,26 @@
+<h1>Data Binding</h1>
+
+<h2>Interpolation</h2>
+<div>{{ title }}</div>
+<div [innerText]="title"></div><!-- Ceci est du property binding -->
+<hr>
+
+<h2>Property Binding</h2>
+<div>{{ myImg }}</div><!-- Ceci est une Interpolation -->
+<div><img src="{{ myImg }}"></div><!-- Ceci est une Interpolation -->
+<div><img [src]="myImg"></div>
+<hr>
+
+<h2>Event Binding</h2>
+<button type="button" (click)="eventBindingDemo()">Click Me</button><br>
+<button type="button" (click)="changeTitle()">Change Title</button>
+<hr>
+
+<h2>Two Way Binding</h2>
+<div>{{ username }}</div><!-- Ceci est une Interpolation -->
+<input type="text" [(ngModel)]="username" (blur)="changeName()">
+<hr>
+
+<button type="button" (click)="less()">-</button>
+<span>{{ count }}</span>
+<button type="button" (click)="more()">+</button>

@@ -1,0 +1,40 @@
+<div>
+  <button (click)="toggleVisible()">Toggle Visible</button>
+  <div *ngIf="isVisible">Ce texte s'affiche si isVisible est vrai.</div>
+</div>
+
+<div>
+  <ng-template *ngIf="isVisible; else isNotVisible">Ce texte s'affiche si isVisible est vrai.</ng-template>
+  <ng-template #isNotVisible>Ce texte s'affiche si isVisible est faux</ng-template>
+</div>
+
+
+
+<div>
+  <ul>
+    <li *ngFor="let fruit of fruits; let i = index">{{ i }} - {{ fruit }}</li>
+  </ul>
+</div>
+
+
+
+
+
+<style>
+  .active {
+    border: 3px solid red;
+  }
+</style>
+
+<div>
+  <button (click)="roleAdmin()"  [ngClass]="{'active': role == 'admin'}">Admin</button>
+  <button (click)="roleEditor()" [ngClass]="{'active': role == 'editor'}">Editor</button>
+  <button (click)="roleUser()"   [ngClass]="{'active': role == 'user'}">User</button>
+
+  <div [ngSwitch]="role">
+    <p *ngSwitchCase="'admin'">Bonjour, Admin.</p>
+    <p *ngSwitchCase="'editor'">Bonjour, Editeur.</p>
+    <p *ngSwitchCase="'user'">Bonjour, Utilisateur.</p>
+  </div>
+</div>
+
