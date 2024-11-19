@@ -1,0 +1,20 @@
+<h2>Books list</h2>
+<div>
+
+    <ul *ngIf="books.length; else emptyBooks">
+        <li *ngFor="let book of books">{{ book.title }}</li>
+    </ul>
+    <ng-template #emptyBooks>No book found !</ng-template>
+
+    <hr>
+
+    <ul>
+    @for (book of books; track book.id) {
+        <li (click)="onBookClick(book)">{{book.id}} - {{ book.title }}</li>
+    }
+    @empty {
+        <li>No book found !</li>
+    }
+    </ul>
+
+</div>
