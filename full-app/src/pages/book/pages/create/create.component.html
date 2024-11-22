@@ -1,1 +1,27 @@
-<p>Book create works!</p>
+<div class="row">
+    <div class="col-6 offset-3">
+
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit(bookForm)">
+
+            <div class="mb-3">
+                <label for="title">Title</label>
+                <input id="title" type="text" formControlName="title">
+            </div>
+
+            <div class="mb-3">
+                <label for="description">Description</label>
+                <input id="description" type="text" formControlName="description">
+            </div>
+
+            <div class="mb-3">
+                <label for="price">Price</label>
+                <input id="price" type="number" formControlName="price">
+            </div>
+
+            <button type="submit" [disabled]="!bookForm.valid">Send</button>
+        
+            <p [hidden]="!submission">Submitting.....</p>
+        </form>
+
+    </div>
+</div>

@@ -1,1 +1,22 @@
-<p>Book index works!</p>
+<a routerLink="/book">Add new book</a>
+<hr>
+
+Total: {{ books.length }}
+<hr>
+
+@for (book of books; track book._id) {
+<div>
+    <h3>{{ book.title }}</h3>
+
+    <div><a routerLink="/book/{{ book._id }}">{{ book._id }}</a></div>
+    <div><a [routerLink]="['/book', book._id]">{{ book._id }}</a></div>
+    <!-- <div><a [routerLink]="['book', book._id]">{{ book._id }}</a></div> -->
+
+    @if (book.description) {
+        <p> {{ book.description }}</p>
+    }
+    
+    <div>{{ book.price }}</div>
+    <hr>
+</div>
+}
