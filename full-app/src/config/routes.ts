@@ -4,6 +4,7 @@ import { routes as homepageRoutes } from '../pages/homepage/homepage.routes';
 import { routes as aboutRoutes } from '../pages/about/about.routes';
 import { routes as contactRoutes } from '../pages/contact/contact.routes';
 import { routes as bookRoutes } from '../pages/book/book.routes';
+import { routes as securityRoutes } from '../pages/security/security.routes';
 
 //    site.com/
 //    Error 404
@@ -23,6 +24,7 @@ export const routes: Routes = [
     ...aboutRoutes,
     ...contactRoutes,
     ...bookRoutes,
+    ...securityRoutes,
 
 
     // --

@@ -27,7 +27,7 @@ export const routes: Route[] = [
 
             // Book Create
             {
-                path: '', // site.com/book
+                path: '', // site.com/book/
                 component: CreateComponent,
                 canActivate: [authenticatedGuard],
             },
